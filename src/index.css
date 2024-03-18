@@ -1,13 +1,196 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(226, 225, 221, 0.326);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  width: 400px;
+  margin: auto;
+  /* border: 2px solid black; */
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 26px;
+}
+
+/* Balance */
+.balance h4 {
+  font-size: 18px;
+  margin: 0;
+  /* border: 1px solid black; */
+}
+
+.balance h3 {
+  margin: 0;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.balance-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reset-btn {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.balance-inf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 5px 30px;
+}
+
+.balance-inf h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.balance-inf h2 span {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: rgb(144, 13, 13);
+}
+
+.line {
+  width: 2px;
+  height: 60px;
+  background-color: rgba(128, 128, 128, 0.438);
+}
+
+/* History */
+.history {
+  margin-bottom: 50px;
+}
+
+.history h2 {
+  margin-top: 50px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.77);
+}
+
+.under-line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.374);
+  margin-bottom: 25px;
+}
+
+.history ul {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history ul li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid black; */
+  padding: 0 17px;
+  background-color: white;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+
+.history ul li:hover {
+  background-color: rgba(59, 56, 56, 0.096);
+}
+
+.delete-btn {
+  position: absolute;
+  right: -35px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.history ul li:hover .delete-btn {
+  opacity: 1;
+}
+
+.green-notch {
+  border-right: 6px solid green;
+}
+
+.red-notch {
+  border-right: 6px solid rgb(188, 14, 14);
+}
+
+/* FORM */
+.form h2 {
+  margin-top: 50px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.77);
+}
+
+.form-inf {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-inf:first-child {
+  margin-bottom: 23px;
+}
+
+form label {
+  font-size: 18px;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+form input {
+  padding: 8px;
+  outline: none;
+  font-size: 20px;
+}
+
+form input::placeholder {
+  font-size: 16px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 7px 14px;
+  background-color: rgb(55, 122, 232);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.info-message {
+  font-size: 18px;
+  color: rgb(181, 10, 10);
 }

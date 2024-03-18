@@ -4,16 +4,10 @@ import Form from "./Form";
 import { useEffect, useState } from "react";
 
 function App() {
-  const initialTransaction =
-    JSON.parse(localStorage.getItem("transaction")) || []; // Da se dohvate podaci iz localstorage ako ih ima ili u suprotonom da se postavi []
+  const [transactionArray, setTransactionArray] = useState([]);
 
-  const [transactionArray, setTransactionArray] = useState(initialTransaction);
-
-  const initialIncome = JSON.parse(localStorage.getItem("income")) || 0;
-  const initialExpense = JSON.parse(localStorage.getItem("expense")) || 0;
-
-  const [income, setIncome] = useState(initialIncome);
-  const [expense, setExpense] = useState(initialExpense);
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
 
   function handleAddTransaction(transaction) {
     setTransactionArray((prevTransactions) => [
@@ -21,7 +15,8 @@ function App() {
       transaction,
     ]);
 
-    const lastTransaction = transaction;
+    const newTransactions = [...transactionArray, transaction];
+    const lastTransaction = newTransactions[newTransactions.length - 1];
 
     if (lastTransaction.amount > 0)
       setIncome((prevIncome) => prevIncome + lastTransaction.amount);
@@ -45,16 +40,6 @@ function App() {
     setIncome(0);
     setExpense(0);
   }
-
-  // Svaki put kada se desi dodavanje itema u transactionArray da se sacuva u localstorage
-  useEffect(
-    function () {
-      localStorage.setItem("transaction", JSON.stringify(transactionArray));
-      localStorage.setItem("income", JSON.stringify(income));
-      localStorage.setItem("expense", JSON.stringify(expense));
-    },
-    [transactionArray, income, expense]
-  );
 
   return (
     <div>
